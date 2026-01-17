@@ -1,0 +1,28 @@
+{
+  "dataset_01": {
+    "method": "KMeans",
+    "params": {
+      "n_clusters": 2
+    },
+    "criterion": "max_silhouette",
+    "silhouette": 0.5216395622404243
+  },
+  "dataset_02": {
+    "method": "DBSCAN",
+    "params": {
+      "eps": 0.7,
+      "min_samples": 7
+    },
+    "criterion": "max_silhouette",
+    "silhouette": 0.3520987973628631
+  },
+  "dataset_03": {
+    "method": "AgglomerativeClustering",
+    "params": {
+      "n_clusters": 2,
+      "linkage": "average"
+    },
+    "criterion": "max_silhouette",
+    "silhouette": 0.4252961244445326
+  }
+}
