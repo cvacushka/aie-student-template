@@ -1,0 +1,173 @@
+2026-01-16 23:35:21.578 Python[24990:1969525] +[IMKClient subclass]: chose IMKClient_Modern
+2026-01-16 23:35:21.578 Python[24990:1969525] +[IMKInputSession subclass]: chose IMKInputSession_Modern
+Найдено code ячеек: 24
+
+======================================================================
+
+[1/24] Выполнение ячейки...
+----------------------------------------------------------------------
+  # Импорт библиотек
+  import pandas as pd
+  import numpy as np
+  ...
+Библиотеки импортированы успешно!
+✓ Успешно выполнено
+
+[2/24] Выполнение ячейки...
+----------------------------------------------------------------------
+  # Загрузка данных
+  df = pd.read_csv("S06-hw-dataset-01.csv")
+  print(f"Размер датасета: {df.shape}")
+  ...
+Размер датасета: (12000, 30)
+
+Первые строки:
+✓ Успешно выполнено
+
+[3/24] Выполнение ячейки...
+----------------------------------------------------------------------
+  # Основная информация о данных
+  print("Информация о датасете:")
+  df.info()
+  ...
+Информация о датасете:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 12000 entries, 0 to 11999
+Data columns (total 30 columns):
+ #   Column         Non-Null Count  Dtype  
+---  ------         --------------  -----  
+ 0   id             12000 non-null  int64  
+ 1   num01          12000 non-null  float64
+ 2   num02          12000 non-null  float64
+ 3   num03          12000 non-null  float64
+ 4   num04          12000 non-null  float64
+ 5   num05          12000 non-null  float64
+ 6   num06          12000 non-null  float64
+ 7   num07          12000 non-null  float64
+ 8   num08          12000 non-null  float64
+ 9   num09          12000 non-null  float64
+ 10  num10          12000 non-null  float64
+ 11  num11          12000 non-null  float64
+ 12  num12          12000 non-null  float64
+ 13  num13          12000 non-null  float64
+ 14  num14          12000 non-null  float64
+ 15  num15          12000 non-null  float64
+ 16  num16          12000 non-null  float64
+ 17  num17          12000 non-null  float64
+ 18  num18          12000 non-null  float64
+ 19  num19          12000 non-null  float64
+ 20  num20          12000 non-null  float64
+ 21  num21          12000 non-null  float64
+ 22  num22          12000 non-null  float64
+ 23  num23          12000 non-null  float64
+ 24  num24          12000 non-null  float64
+ 25  cat_contract   12000 non-null  int64  
+ 26  cat_region     12000 non-null  int64  
+ 27  cat_payment    12000 non-null  int64  
+ 28  tenure_months  12000 non-null  int64  
+ 29  target         12000 non-null  int64  
+dtypes: float64(24), int64(6)
+memory usage: 2.7 MB
+✓ Успешно выполнено
+
+[4/24] Выполнение ячейки...
+----------------------------------------------------------------------
+  # Базовые статистики
+  print("Описательные статистики числовых признаков:")
+  df.describe()
+  ...
+Описательные статистики числовых признаков:
+✓ Успешно выполнено
+
+[5/24] Выполнение ячейки...
+----------------------------------------------------------------------
+  # Проверка пропусков
+  missing = df.isnull().sum()
+  print("Пропущенные значения:")
+  ...
+Пропущенные значения:
+Series([], dtype: int64)
+
+Пропусков нет!
+✓ Успешно выполнено
+
+[6/24] Выполнение ячейки...
+----------------------------------------------------------------------
+  # Распределение таргета
+  target_dist = df['target'].value_counts(normalize=True)
+  print("Распределение классов:")
+  ...
+Распределение классов:
+Класс 0: 67.66% (8119 примеров)
+Класс 1: 32.34% (3881 примеров)
+✓ Успешно выполнено
+
+[7/24] Выполнение ячейки...
+----------------------------------------------------------------------
+  # Разделение на признаки и таргет
+  # Исключаем столбец 'id' из признаков
+  X = df.drop(['id', 'target'], axis=1)
+  ...
+Размер матрицы признаков: (12000, 28)
+Размер таргета: (12000,)
+
+Типы признаков:
+float64    24
+int64       4
+Name: count, dtype: int64
+✓ Успешно выполнено
+
+[8/24] Выполнение ячейки...
+----------------------------------------------------------------------
+  # Разделение на train/test с фиксированным random_state
+  # Используем stratify для сохранения пропорций классов
+  RANDOM_STATE = 42
+  ...
+Размер обучающей выборки: 9000 (75.0%)
+Размер тестовой выборки: 3000 (25.0%)
+
+Распределение классов в train:
+target
+0    0.676556
+1    0.323444
+Name: proportion, dtype: float64
+
+Распределение классов в test:
+target
+0    0.676667
+1    0.323333
+Name: proportion, dtype: float64
+✓ Успешно выполнено
+
+[9/24] Выполнение ячейки...
+----------------------------------------------------------------------
+  # Словарь для хранения результатов
+  results = {}
+  # Baseline 1: DummyClassifier (most_frequent)
+  ...
+DummyClassifier (most_frequent):
+  Accuracy: 0.6767
+  F1-score: 0.0000
+  ROC-AUC: 0.5000
+✓ Успешно выполнено
+
+[10/24] Выполнение ячейки...
+----------------------------------------------------------------------
+  # Baseline 2: LogisticRegression с StandardScaler
+  lr_pipeline = Pipeline([
+      ('scaler', StandardScaler()),
+  ...
+LogisticRegression:
+  Accuracy: 0.8297
+  F1-score: 0.7147
+  ROC-AUC: 0.8789
+✓ Успешно выполнено
+
+[11/24] Выполнение ячейки...
+----------------------------------------------------------------------
+  # Подбор гиперпараметров для DecisionTree через GridSearchCV
+  # Контролируем сложность через max_depth, min_samples_leaf и ccp_alpha
+  param_grid_dt = {
+  ...
+Подбор гиперпараметров для DecisionTreeClassifier...
+Fitting 5 folds for each of 96 candidates, totalling 480 fits
