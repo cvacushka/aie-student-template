@@ -5,7 +5,7 @@
     "task_type": "binary_classification",
     "test_size": 0.25,
     "random_state": 42,
-    "date": "2024-01-01T00:00:00",
+    "date": "2026-01-25T15:47:33.247601",
     "metrics": [
       "accuracy",
       "f1",
@@ -13,7 +13,7 @@
     ]
   },
   "results": {
-    "DummyClassifier": {
+    "Dummy": {
       "accuracy": 0.6766666666666666,
       "f1": 0.0,
       "roc_auc": 0.5
@@ -24,15 +24,18 @@
       "roc_auc": 0.8789091463104972
     },
     "DecisionTree": {
-      "accuracy": 0.8793333333333333,
-      "f1": 0.8084656084656084,
-      "roc_auc": 0.8986613173531055,
+      "accuracy": 0.8663333333333333,
+      "f1": 0.7865886109632784,
+      "roc_auc": 0.8895355746280026,
       "best_params": {
         "ccp_alpha": 0.0,
-        "max_depth": 10,
-        "min_samples_leaf": 5
+        "max_depth": "None",
+        "max_leaf_nodes": 50,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2
       },
-      "cv_score": 0.8879526989996179
+      "cv_score": 0.8891958430315237
     },
     "RandomForest": {
       "accuracy": 0.9303333333333333,
@@ -46,7 +49,7 @@
       },
       "cv_score": 0.9651728751180095
     },
-    "GradientBoosting": {
+    "Boosting": {
       "accuracy": 0.9406666666666667,
       "f1": 0.9049145299145299,
       "roc_auc": 0.9754171956731501,
