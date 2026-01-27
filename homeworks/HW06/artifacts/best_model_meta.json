@@ -1,15 +1,18 @@
 {
-  "model_name": "Boosting",
-  "best_params": {
-    "learning_rate": 0.2,
-    "max_depth": 7,
-    "min_samples_leaf": 5,
-    "n_estimators": 200
-  },
+  "best_model": "RandomForest",
   "test_metrics": {
-    "accuracy": 0.9406666666666667,
-    "f1": 0.9049145299145299,
-    "roc_auc": 0.9754171956731501
+    "model": "RandomForest",
+    "accuracy": 0.92875,
+    "f1": 0.8845374746792708,
+    "roc_auc": 0.9678632528820273
   },
-  "cv_score": 0.9714027508804796
+  "search_summary": {
+    "best_params": {
+      "max_depth": null,
+      "max_features": "sqrt",
+      "min_samples_leaf": 1
+    },
+    "best_cv_roc_auc": 0.970335784122309
+  },
+  "random_state": 42
 }

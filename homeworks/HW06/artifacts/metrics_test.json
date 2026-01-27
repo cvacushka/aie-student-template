@@ -1,65 +1,27 @@
 {
-  "metadata": {
-    "experiment_name": "HW06",
-    "dataset": "S06-hw-dataset-01.csv",
-    "task_type": "binary_classification",
-    "test_size": 0.25,
-    "random_state": 42,
-    "date": "2026-01-25T15:47:33.247601",
-    "metrics": [
-      "accuracy",
-      "f1",
-      "roc_auc"
-    ]
+  "DummyClassifier": {
+    "accuracy": 0.6766666666666666,
+    "f1": 0.0,
+    "roc_auc": 0.5
   },
-  "results": {
-    "Dummy": {
-      "accuracy": 0.6766666666666666,
-      "f1": 0.0,
-      "roc_auc": 0.5
-    },
-    "LogisticRegression": {
-      "accuracy": 0.8296666666666667,
-      "f1": 0.7146845337800112,
-      "roc_auc": 0.8789091463104972
-    },
-    "DecisionTree": {
-      "accuracy": 0.8663333333333333,
-      "f1": 0.7865886109632784,
-      "roc_auc": 0.8895355746280026,
-      "best_params": {
-        "ccp_alpha": 0.0,
-        "max_depth": "None",
-        "max_leaf_nodes": 50,
-        "min_impurity_decrease": 0.0,
-        "min_samples_leaf": 1,
-        "min_samples_split": 2
-      },
-      "cv_score": 0.8891958430315237
-    },
-    "RandomForest": {
-      "accuracy": 0.9303333333333333,
-      "f1": 0.8865979381443299,
-      "roc_auc": 0.9693758569905034,
-      "best_params": {
-        "max_depth": "None",
-        "max_features": "log2",
-        "min_samples_leaf": 1,
-        "n_estimators": 100
-      },
-      "cv_score": 0.9651728751180095
-    },
-    "Boosting": {
-      "accuracy": 0.9406666666666667,
-      "f1": 0.9049145299145299,
-      "roc_auc": 0.9754171956731501,
-      "best_params": {
-        "learning_rate": 0.2,
-        "max_depth": 7,
-        "min_samples_leaf": 5,
-        "n_estimators": 200
-      },
-      "cv_score": 0.9714027508804796
-    }
+  "LogisticRegression": {
+    "accuracy": 0.8275,
+    "f1": 0.7076271186440678,
+    "roc_auc": 0.8746905312071505
+  },
+  "DecisionTree": {
+    "accuracy": 0.8691666666666666,
+    "f1": 0.7942332896461337,
+    "roc_auc": 0.9097569162307654
+  },
+  "RandomForest": {
+    "accuracy": 0.92875,
+    "f1": 0.8845374746792708,
+    "roc_auc": 0.9678632528820273
+  },
+  "AdaBoostClassifier": {
+    "accuracy": 0.84625,
+    "f1": 0.7432150313152401,
+    "roc_auc": 0.9069911380833883
   }
 }
