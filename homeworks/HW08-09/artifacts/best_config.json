@@ -1,0 +1,14 @@
+{
+  "dataset": "KMNIST",
+  "seed": 42,
+  "hidden_dims": [
+    256,
+    128
+  ],
+  "dropout": 0.0,
+  "use_batchnorm": true,
+  "optimizer": "Adam",
+  "lr": 0.001,
+  "best_val_accuracy": 0.8916500445376051,
+  "test_accuracy": 0.8836036392405063
+}
