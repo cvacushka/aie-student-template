@@ -84,4 +84,5 @@
 ## 10. Приложение (опционально)
 
 - Дополнительные эксперименты (например, сравнение “чистых” Adam и SGD без weight decay на одном lr) можно добавить как отдельные строки в `runs.csv` и графики в `./artifacts/figures/`.
+- Шаблон оформления (семинар): https://github.com/mirea-aie-2025/aie-course-meta/tree/main/seminars/S11
 
