@@ -55,3 +55,6 @@ logs/
 *.tmp
 *.bak
 *.old
+
+# Локальные датасеты HW10-11 (скачиваются при первом Run All)
+homeworks/HW10-11/data/

@@ -1,0 +1,8 @@
+{
+  "seed": 42,
+  "dataset": "STL10",
+  "experiment_id": "C4",
+  "model_summary": "resnet18(partial_finetune)",
+  "FAST_DEV_RUN": true,
+  "IMG_SIZE": 96
+}
