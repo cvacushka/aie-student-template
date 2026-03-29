@@ -1,0 +1,14 @@
+{
+  "seed": 42,
+  "window_size": 24,
+  "hidden_size": 48,
+  "num_layers": 1,
+  "batch_size": 64,
+  "lr": 0.001,
+  "epochs_trained": 5,
+  "architecture": "GRU(input_size=1, hidden_size=48, num_layers=1, batch_first=True) -> Linear(48, 1)",
+  "scaler": "StandardScaler fit on train target only",
+  "normalization": "StandardScaler on scalar target y; fit on train indices only; transform full series",
+  "device": "cpu",
+  "FAST_DEV_RUN": true
+}
