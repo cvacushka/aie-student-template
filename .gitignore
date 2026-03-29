@@ -58,3 +58,8 @@ logs/
 
 # Локальные датасеты HW10-11 (скачиваются при первом Run All)
 homeworks/HW10-11/data/
+
+# Локальные материалы S10/S11 и HW12 (не вести в репозитории)
+homeworks/S10/
+homeworks/S11/
+homeworks/HW12/
