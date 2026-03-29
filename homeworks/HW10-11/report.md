@@ -1,6 +1,8 @@
 # HW10-11 – компьютерное зрение в PyTorch: CNN, transfer learning, detection/segmentation
 
-**Трек второй части (detection или segmentation): выбран `segmentation`.**
+**Выбранный трек второй части: segmentation** (часть B — сегментация; detection не используется).
+
+Трек части B (обязательная строка для проверки): **segmentation** (не detection).
 
 ## 1. Кратко: что сделано
 
@@ -87,9 +89,9 @@
 Короткая сводка (6-10 строк):
 
 - Лучший эксперимент части A: **C4** (`resnet18-finetune`, частичный fine-tune `layer4` + `fc`).
-- Лучшая `val_accuracy` (по val): **≈ 0.503** (50.3%).
-- Итоговая `test_accuracy` лучшего классификатора (один прогон на test): **≈ 0.528** (52.8%).
-- Сводка по C1–C3 (только **val**, test для них в `runs.csv` пустой — **test один раз для лучшей модели C4**): C1 val **≈0.188**; C2 val **≈0.188**; C3 val **≈0.119**.
+- Лучшая `val_accuracy` (по val): **≈ 0.511** (51.1%; см. `./artifacts/runs.csv`).
+- Итоговая `test_accuracy` лучшего классификатора (один прогон на test): **≈ 0.526** (52.6%).
+- Сводка по C1–C3 (только **val**, test для них в `runs.csv` пустой — **test один раз для лучшей модели C4**): C1 val **≈0.188**; C2 val **≈0.153**; C3 val **≈0.153** (числа после последнего `Run All`).
 - Что дали аугментации (C2 vs C1): в этом быстром прогоне val/test почти совпали; полное сравнение — в `./artifacts/runs.csv` и на `./artifacts/figures/classification_compare.png`.
 - Что дал transfer learning (C3/C4 vs C1/C2): предобученные признаки ResNet дают заметный скачок качества относительно маленькой CNN на `STL10`.
 - Что оказалось лучше: head-only или partial fine-tuning: **partial fine-tuning (C4)** — лучший `best_val_accuracy` среди C1–C4.

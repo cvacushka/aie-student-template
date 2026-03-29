@@ -1,7 +1,7 @@
 experiment_id,task,dataset,seed,model_summary,optimizer,lr,epochs_trained,best_val_accuracy,test_accuracy,precision,recall,mean_iou,notes
-C1,classification,STL10,42,SimpleCNN,Adam,0.001,1,0.1875,,,,,FAST_DEV_RUN=True; test только у лучшей модели по val
+C1,classification,STL10,42,SimpleCNN,Adam,0.001,1,0.1875,,,,,FAST_DEV_RUN=True
 C2,classification,STL10,42,SimpleCNN,Adam,0.001,1,0.1875,,,,,FAST_DEV_RUN=True
 C3,classification,STL10,42,resnet18(head_only),Adam,0.0001,1,0.11931818181818182,,,,,FAST_DEV_RUN=True
-C4,classification,STL10,42,resnet18(partial_finetune),Adam,0.0001,1,0.5028409090909091,0.5284090909090909,,,,FAST_DEV_RUN=True; единственный test_accuracy среди C1–C4
+C4,classification,STL10,42,resnet18(partial_finetune),Adam,0.0001,1,0.5028409090909091,0.5284090909090909,,,,FAST_DEV_RUN=True
 V1,segmentation,OxfordIIITPet,42,FCN (fcn_resnet50 COCO) - argmax fg,,,0,,,0.9999999999999915,0.394625786346747,0.394625786346747,"threshold_fg=0.3 unused (V1 uses argmax), FAST_DEV_RUN=True"
 V2,segmentation,OxfordIIITPet,42,FCN (fcn_resnet50 COCO) - p_fg threshold,,,0,,,0.9999999999999889,0.31571366206317625,0.31571366206317625,"threshold_fg=0.7, FAST_DEV_RUN=True"
