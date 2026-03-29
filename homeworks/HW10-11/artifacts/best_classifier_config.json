@@ -3,6 +3,26 @@
   "dataset": "STL10",
   "experiment_id": "C4",
   "model_summary": "resnet18(partial_finetune)",
+  "task_part_b_track": "segmentation",
+  "loss": "CrossEntropyLoss",
+  "optimizer": "Adam",
+  "lr": 0.0001,
+  "batch_size": 32,
+  "epochs_trained": 1,
+  "num_classes": 10,
+  "device": "cpu",
   "FAST_DEV_RUN": true,
-  "IMG_SIZE": 96
+  "IMG_SIZE": 96,
+  "transforms_base": "Resize((96,96)), ToTensor(), Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225))",
+  "transforms_augmentation_C2": "Resize((96,96)), RandomHorizontalFlip(p=0.5), RandomCrop(96, padding=8), ToTensor(), Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225))",
+  "transforms_resnet_C3_C4": "Resize((96,96)), ToTensor(), Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225))",
+  "preprocess": {
+    "mean": [0.485, 0.456, 0.406],
+    "std": [0.229, 0.224, 0.225]
+  },
+  "augmentation": {
+    "C2": "RandomHorizontalFlip(p=0.5), RandomCrop(IMG_SIZE, padding=8) в цепочке TRANSFORMS_AUG",
+    "C1_C3_C4": "без RandomHorizontalFlip/RandomCrop (см. transforms_base / transforms_resnet)"
+  },
+  "resnet18_pretrained_weights": "torchvision.models.ResNet18_Weights.DEFAULT (ImageNet-1K)"
 }
