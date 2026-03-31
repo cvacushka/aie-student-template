@@ -89,9 +89,9 @@
 Короткая сводка (6-10 строк):
 
 - Лучший эксперимент части A: **C4** (`resnet18-finetune`, частичный fine-tune `layer4` + `fc`).
-- Лучшая `val_accuracy` (по val): **≈ 0.511** (51.1%; см. `./artifacts/runs.csv`).
-- Итоговая `test_accuracy` лучшего классификатора (один прогон на test): **≈ 0.526** (52.6%).
-- Сводка по C1–C3 (только **val**, test для них в `runs.csv` пустой — **test один раз для лучшей модели C4**): C1 val **≈0.188**; C2 val **≈0.153**; C3 val **≈0.153** (числа после последнего `Run All`).
+- Лучшая `val_accuracy` (по val): **≈ 0.503** (точнее `0.5028409091`; см. `./artifacts/runs.csv`).
+- Итоговая `test_accuracy` лучшего классификатора (один прогон на test): **≈ 0.528** (точнее `0.5284090909`).
+- Сводка по C1–C3 (только **val**, test для них в `runs.csv` пустой — **test один раз для лучшей модели C4**): C1 val **0.1875**; C2 val **0.1875**; C3 val **0.1193** (округлено, по `./artifacts/runs.csv`).
 - Что дали аугментации (C2 vs C1): в этом быстром прогоне val/test почти совпали; полное сравнение — в `./artifacts/runs.csv` и на `./artifacts/figures/classification_compare.png`.
 - Что дал transfer learning (C3/C4 vs C1/C2): предобученные признаки ResNet дают заметный скачок качества относительно маленькой CNN на `STL10`.
 - Что оказалось лучше: head-only или partial fine-tuning: **partial fine-tuning (C4)** — лучший `best_val_accuracy` среди C1–C4.
