@@ -1,0 +1,19 @@
+{
+  "test_accuracy": 0.93,
+  "test_f1_macro": 0.884590830069674,
+  "model_name": "distilbert-base-uncased",
+  "dataset": "emotion",
+  "num_labels": 6,
+  "label_names": [
+    "sadness",
+    "joy",
+    "love",
+    "anger",
+    "fear",
+    "surprise"
+  ],
+  "seed": 42,
+  "device": "cpu",
+  "python": "3.11.14",
+  "torch": "2.11.0"
+}

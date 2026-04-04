@@ -62,3 +62,6 @@ homeworks/HW10-11/data/
 # Локальные материалы S10/S11 (не вести в репозитории)
 homeworks/S10/
 homeworks/S11/
+
+# HW13: чекпоинты Trainer не требуются для сдачи и очень тяжёлые
+homeworks/HW13/artifacts/trainer_checkpoints/

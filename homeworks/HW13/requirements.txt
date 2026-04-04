@@ -1,0 +1,9 @@
+# HW13: emotion + DistilBERT (HuggingFace Trainer)
+# transformers 5.x: Trainer(..., processing_class=tokenizer); 4.x: tokenizer=...
+datasets>=2.16
+transformers>=4.36
+torch>=2.0
+scikit-learn>=1.3
+matplotlib>=3.7
+pandas>=2.0
+accelerate>=0.26
