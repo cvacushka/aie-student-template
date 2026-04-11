@@ -1,0 +1,11 @@
+query,expected_source,retrieved_sources,hit_at_k,rank_of_first_relevant
+Как скопировать репозиторий с сервера на компьютер?,doc_01,doc_12 | doc_14 | doc_08 | doc_01 | doc_15,1,4
+Как писать сообщения к коммитам и что такое amend?,doc_02,doc_02 | doc_14 | doc_12 | doc_04 | doc_03,1,1
+Как создать новую ветку и переключаться между ветками?,doc_03,doc_03 | doc_14 | doc_04 | doc_10 | doc_02,1,1
+Как объединить feature-ветку в main?,doc_04,doc_04 | doc_05 | doc_14 | doc_10 | doc_03,1,1
+Что делает git rebase и когда он опасен?,doc_05,doc_05 | doc_12 | doc_09 | doc_02 | doc_01,1,1
+Какие файлы не нужно коммитить в Python-проекте?,doc_06,doc_06 | doc_04 | doc_09 | doc_02 | doc_10,1,1
+Как настроить ключи SSH для GitHub?,doc_07,doc_07 | doc_14 | doc_01 | doc_13 | doc_08,1,1
+Что такое pull request и зачем описание?,doc_08,doc_08 | doc_02 | doc_12 | doc_04 | doc_03,1,1
+Как разрешить конфликт слияния с маркерами в файле?,doc_09,doc_09 | doc_14 | doc_04 | doc_03 | doc_02,1,1
+Что делает git stash и как вернуть изменения?,doc_10,doc_10 | doc_12 | doc_02 | doc_05 | doc_14,1,1

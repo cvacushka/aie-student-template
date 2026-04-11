@@ -1,0 +1,23 @@
+{
+  "vectorization": "TfidfVectorizer(max_features=4000, ngram_range=(1,2), min_df=1) + L2",
+  "chunk_size": 480,
+  "overlap": 90,
+  "k_eval": 5,
+  "metrics_initial": {
+    "hit@5": 1.0,
+    "recall@5": 1.0,
+    "MRR@5": 0.925
+  },
+  "experiment_topk": {
+    "k3": {
+      "hit@3": 0.9,
+      "recall@3": 0.9,
+      "MRR@3": 0.9
+    },
+    "k5": {
+      "hit@5": 1.0,
+      "recall@5": 1.0,
+      "MRR@5": 0.925
+    }
+  }
+}

@@ -1,0 +1,5 @@
+query,before_retrieved_sources,after_retrieved_sources,changed
+Как автоматически запускать линтер перед коммитом?,doc_02 | doc_14 | doc_04 | doc_12 | doc_15,doc_02 | doc_14 | doc_16 | doc_04 | doc_15,True
+Как хранить большие модели и бинарники в Git?,doc_14 | doc_01 | doc_01 | doc_03 | doc_12,doc_17 | doc_14 | doc_01 | doc_01 | doc_03,True
+Что такое conventional commits и типы feat/fix?,doc_12 | doc_02 | doc_04 | doc_03 | doc_01,doc_18 | doc_12 | doc_02 | doc_04 | doc_03,True
+Как клонировать репозиторий с сервера?,doc_01 | doc_14 | doc_15 | doc_12 | doc_04,doc_01 | doc_14 | doc_15 | doc_12 | doc_16,True

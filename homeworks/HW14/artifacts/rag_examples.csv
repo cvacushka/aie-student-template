@@ -1,0 +1,6 @@
+question,answer,retrieved_sources
+Как отложить незакоммиченные изменения и вернуть их потом?,Вернуть изменения можно git stash pop или git stash apply.,Git stash (doc_10) | GitHub Actions — введение (doc_14) | Удалённые репозитории (doc_12) | Коммиты и сообщения (doc_02)
+Что такое GitHub Actions и где лежит конфиг?,"GitHub Actions запускает автоматизацию по событиям репозитория: push, pull_request, schedule.",GitHub Actions — введение (doc_14) | Pre-commit хуки (doc_16) | SSH-ключи для GitHub (doc_07) | Удалённые репозитории (doc_12)
+Как помечают версии релизов в Git?,Лёгкий тег: git tag v1.0.0.,Теги и релизы (doc_13) | GitHub Actions — введение (doc_14) | Клонирование репозитория (doc_01) | Клонирование репозитория (doc_01)
+Нужен ли Git LFS для маленьких текстовых файлов?,Требуется установка git-lfs и git lfs track для шаблонов файлов.,Git LFS (doc_17) | Файл .gitignore (doc_06) | Коммиты и сообщения (doc_02) | Клонирование репозитория (doc_01)
+Как оформить сообщение коммита по conventional commits?,"Сообщение коммита должно кратко объяснять, зачем сделано изменение.",Conventional Commits (doc_18) | Коммиты и сообщения (doc_02) | GitHub Actions — введение (doc_14) | Теги и релизы (doc_13)
