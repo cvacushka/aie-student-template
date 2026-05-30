@@ -1,0 +1,8 @@
+{
+  "target_column": "co2_risk_next_30min",
+  "positive_class": "risk_of_co2_exceedance",
+  "risk_threshold_ppm": 1100,
+  "prediction_horizon_minutes": 30,
+  "decision_metric": "validation_f1",
+  "random_state": 42
+}

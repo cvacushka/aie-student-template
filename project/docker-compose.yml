@@ -1,0 +1,9 @@
+services:
+  airguard:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - configs/.env.example
+    environment:
+      AIRGUARD_LOG_LEVEL: INFO

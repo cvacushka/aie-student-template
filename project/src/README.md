@@ -1,23 +1,21 @@
-# Исходный код проекта
+# Код Smart Campus AirGuard
 
-В этой папке размещается **основной код проекта**, который используется для:
+Основной код проекта находится в пакете `src/airguard/`:
 
-- подготовки данных;
-- обучения моделей;
-- инференса (получения предсказаний);
-- запуска сервисов (API/CLI/скриптов).
+- `data/generate_dataset.py` — генерация синтетического датасета;
+- `data/validate.py` — проверки качества данных;
+- `features.py` — построение признаков;
+- `models/train.py` — обучение и сравнение моделей;
+- `models/inference.py` — загрузка артефакта и прогноз;
+- `service/app.py` — FastAPI-приложение с `/health`, `/predict`, `/metrics`;
+- `service/metrics.py` — простые Prometheus-like метрики;
+- `schemas.py` — Pydantic-схемы API.
 
-Примеры того, как можно организовать код (не обязательно строго так, но рекомендуется):
+Основные команды:
 
-- `src/data/` — загрузка и подготовка данных;
-- `src/features/` — генерация и трансформация признаков;
-- `src/models/` — обучение и применение моделей;
-- `src/service/` — запуск сервиса (например, FastAPI/Flask);
-- `src/utils/` — вспомогательные функции.
-
-Точки входа (скрипты, которые вы запускаете из командной строки), удобно оформлять как:
-
-- модули: `python -m src.train`, `python -m src.service`;
-- или скрипты в корне `src/`, например `src/train.py`, `src/service.py`.
-
-Опишите основные команды запуска в файле `project/README.md`.
+```powershell
+cd project
+python -m airguard.data.generate_dataset --rows 6000
+python -m airguard.models.train
+python -m uvicorn airguard.service.app:app --reload
+```

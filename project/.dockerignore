@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+notebooks/.ipynb_checkpoints/
+configs/.env
+data/raw/*.csv
+data/processed/*.csv
+models/*.joblib
+models/*.pkl
+models/*.json
+models/*.csv

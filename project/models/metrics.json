@@ -1,0 +1,15 @@
+{
+  "best_model": "gradient_boosting",
+  "threshold": 0.49,
+  "test_metrics": {
+    "accuracy": 0.9575,
+    "precision": 0.9042,
+    "recall": 0.8857,
+    "f1": 0.8948,
+    "roc_auc": 0.9893
+  },
+  "rows": 6000,
+  "positive_class_share": 0.2038,
+  "experiments_path": "D:\\projects\\python\\Dasha_analiz_vF\\aie-student-template\\project\\models\\experiments.csv",
+  "model_path": "D:\\projects\\python\\Dasha_analiz_vF\\aie-student-template\\project\\models\\airguard_model.joblib"
+}
