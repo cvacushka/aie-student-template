@@ -19,6 +19,7 @@ Smart Campus AirGuard — учебный end-to-end AI-сервис для пр�
 project/
   configs/              # конфиги и .env.example
   data/                 # синтетические учебные данные и описание данных
+  examples/             # готовые JSON-примеры для API
   models/               # локальные артефакты модели и метрики
   notebooks/            # EDA и эксперименты
   src/airguard/         # генерация данных, обучение, inference и API
@@ -63,6 +64,32 @@ python -m uvicorn airguard.service.app:app --reload
 Invoke-RestMethod -Uri "http://127.0.0.1:8000/health"
 Invoke-RestMethod -Uri "http://127.0.0.1:8000/metrics"
 ```
+
+## Быстрая удалённая проверка
+
+Если проект проверяется без участия автора, достаточно выполнить команды ниже из свежего клона репозитория:
+
+```bash
+cd project
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python -m pytest
+python -m uvicorn airguard.service.app:app --host 127.0.0.1 --port 8000
+```
+
+В другом терминале можно проверить API:
+
+```bash
+curl http://127.0.0.1:8000/health
+curl -X POST http://127.0.0.1:8000/predict \
+  -H "Content-Type: application/json" \
+  --data @examples/predict_payload.json
+curl http://127.0.0.1:8000/metrics
+```
+
+Ожидаемо `/health` возвращает `status: ok`, `/predict` возвращает вероятность риска и рекомендацию, а `/metrics` показывает счётчики запросов.
 
 ## Пример запроса к `/predict`
 
