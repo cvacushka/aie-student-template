@@ -36,6 +36,14 @@ from airguard.features import (
 )
 
 
+def portable_path(path: Path) -> str:
+    resolved = path.resolve()
+    try:
+        return resolved.relative_to(Path.cwd().resolve()).as_posix()
+    except ValueError:
+        return resolved.as_posix()
+
+
 def make_one_hot_encoder() -> OneHotEncoder:
     try:
         return OneHotEncoder(handle_unknown="ignore", sparse_output=False)
@@ -221,8 +229,8 @@ def run_training(
         "test_metrics": final_test_metrics,
         "rows": int(len(df)),
         "positive_class_share": round(float(y.mean()), 4),
-        "experiments_path": str(experiments_path),
-        "model_path": str(model_path),
+        "experiments_path": portable_path(experiments_path),
+        "model_path": portable_path(model_path),
     }
     metrics_path.parent.mkdir(parents=True, exist_ok=True)
     metrics_path.write_text(json.dumps(metrics_payload, indent=2, ensure_ascii=False), encoding="utf-8")

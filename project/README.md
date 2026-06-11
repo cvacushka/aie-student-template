@@ -37,6 +37,8 @@ project/
 
 ## Быстрый запуск локально
 
+Нужен Python 3.10 или новее.
+
 ```powershell
 cd project
 python -m venv .venv
@@ -54,6 +56,13 @@ python -m uvicorn airguard.service.app:app --reload
 - Swagger UI: <http://127.0.0.1:8000/docs>
 - Health-check: <http://127.0.0.1:8000/health>
 - Метрики: <http://127.0.0.1:8000/metrics>
+
+Быстрая проверка работоспособности:
+
+```powershell
+Invoke-RestMethod -Uri "http://127.0.0.1:8000/health"
+Invoke-RestMethod -Uri "http://127.0.0.1:8000/metrics"
+```
 
 ## Пример запроса к `/predict`
 
@@ -104,6 +113,19 @@ python -m pytest
 ```
 
 Тесты проверяют генерацию данных, обучение реальной модели и рабочий `/predict`.
+
+## Контрольная проверка перед сдачей
+
+```powershell
+cd project
+python -m pip install -r requirements.txt
+python -m airguard.data.generate_dataset --rows 6000
+python -m airguard.models.train
+python -m pytest
+python -m uvicorn airguard.service.app:app --reload
+```
+
+Ожидаемый результат: тесты проходят, `/health` возвращает `status: ok`, `/predict` отдаёт вероятность риска, а `/metrics` показывает счётчики HTTP-запросов и предсказаний.
 
 ## Демонстрационный сценарий защиты
 

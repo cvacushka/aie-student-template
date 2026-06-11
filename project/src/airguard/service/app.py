@@ -21,12 +21,17 @@ metrics = MetricsRegistry()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    app.state.model_load_error = None
     try:
         app.state.model = AirGuardModel.load(settings.model_artifact_path)
         logger.info("Loaded model artifact from %s", settings.model_artifact_path)
     except FileNotFoundError:
         app.state.model = None
         logger.warning("Model artifact not found at %s", settings.model_artifact_path)
+    except Exception as exc:
+        app.state.model = None
+        app.state.model_load_error = str(exc)
+        logger.exception("Failed to load model artifact from %s", settings.model_artifact_path)
     yield
 
 
@@ -65,12 +70,16 @@ def root() -> dict[str, str]:
 @app.get("/health")
 def health(request: Request) -> dict[str, object]:
     model = getattr(request.app.state, "model", None)
-    return {
+    payload = {
         "status": "ok" if model is not None else "degraded",
         "model_loaded": model is not None,
         "model_path": str(settings.model_artifact_path),
         "model_version": settings.model_version,
     }
+    model_load_error = getattr(request.app.state, "model_load_error", None)
+    if model_load_error:
+        payload["model_load_error"] = model_load_error
+    return payload
 
 
 @app.get("/metrics", response_class=PlainTextResponse)

@@ -10,15 +10,7 @@ WORKDIR /app/project
 
 COPY pyproject.toml requirements.txt ./
 COPY src ./src
-RUN python -m pip install --no-cache-dir \
-    "fastapi>=0.115.0" \
-    "uvicorn[standard]>=0.30.0" \
-    "pandas>=2.1.0" \
-    "numpy>=1.26.0" \
-    "scikit-learn>=1.4.0" \
-    "joblib>=1.3.0" \
-    "pydantic>=2.6.0" \
-    "matplotlib>=3.8.0"
+RUN python -m pip install --no-cache-dir -r requirements.txt
 
 COPY configs ./configs
 COPY data ./data

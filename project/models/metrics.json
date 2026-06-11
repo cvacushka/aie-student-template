@@ -10,6 +10,6 @@
   },
   "rows": 6000,
   "positive_class_share": 0.2038,
-  "experiments_path": "D:\\projects\\python\\Dasha_analiz_vF\\aie-student-template\\project\\models\\experiments.csv",
-  "model_path": "D:\\projects\\python\\Dasha_analiz_vF\\aie-student-template\\project\\models\\airguard_model.joblib"
+  "experiments_path": "models/experiments.csv",
+  "model_path": "models/airguard_model.joblib"
 }
